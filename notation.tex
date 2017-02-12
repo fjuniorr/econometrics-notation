@@ -1,0 +1,836 @@
+\documentclass[11pt,dvips,a4paper]{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{verbatim}
+\usepackage{bm}
+\usepackage{latexsym}
+\usepackage{amsmath}
+%\usepackage{endnotes}
+%\usepackage{makeidx}
+%\usepackage[dvips]{epsfig}
+\setlength{\textwidth}{32pc}
+\setlength{\textheight}{197mm}
+%%%
+\input{ee.sty}
+%%
+\newcommand{\hspacesymbols}%
+   {$\{x: x \in S, x$ satisfies $P\}\;\;$} %symbols index
+\newcommand{\type}[1]{{\tt$\backslash$#1}}
+%
+\renewcommand{\thepage}{\hfill \arabic{page} \hfill}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theequation}{\arabic{equation}}
+\pagestyle{plain}
+\markright{}
+\renewcommand{\baselinestretch}{1.20}
+\pagenumbering{arabic}
+
+\begin{document}
+\begin{center}
+\huge
+{\bf Notation in Econometrics: \\A Proposal for a Standard}\\
+\ \\
+\Large
+Karim M. Abadir   \\
+{\it Department of Mathematics and Department of \\
+Economics, University of York, York, UK} \\
+E-mail: kma4@york.ac.uk \\
+\ \\
+Jan R. Magnus\\
+{\it CentER, Tilburg University, Tilburg, The Netherlands} \\
+E-mail: magnus@uvt.nl \\
+\ \\
+%\today
+\emph{The Econometrics Journal}, 5 (2002), 76--90.\\
+\end{center}
+\ \\
+\ \\
+\normalsize
+\noindent
+{\it Summary:} This paper proposes a standard for notation in econometrics.
+It presents a fully integrated and internally consistent
+framework for notation and abbreviations, which is as close as
+possible to existing common practice and also obeys ISO regulations.
+The symbols used are instantly recognizable and interpretable,
+thus minimizing ambiguity and enhancing reading efficiency.
+The standard is designed in a flexible manner,
+thus allowing for future extensions. \\
+\ \\
+{\it Key words:} Notation, Symbols, Econometrics, International
+Organization for Standardization (ISO). \\
+\ \\
+{\it JEL Code:} C10
+\setcounter{equation}{0}
+\newpage
+\section{Introduction}
+Few things are as boring as questions of notation. Serious researchers
+should do serious research and not waste their time thinking about notation.
+The mathematician J.E. Littlewood said about Jordan that if he (Jordan) had
+four things on the same footing (such as $a$, $b$, $c$, $d$) they would
+appear as
+$$
+a,\quad
+M_3',\quad
+\epsi_2,\quad
+\Pi''_{1,2};
+$$
+see Bollob\'{a}s (1986, p. 60).
+
+On the other hand, many serious researchers {\it did\/} worry
+about notation.
+Jan Tinbergen propagated that
+`when you have an index to a certain variable you should use
+the capital letter as its upper limit.' For example,
+$i=1,\dots,I$ and $j=1,\dots,J$, because this
+`was just a little detail that could help you a lot
+to see through things' (Magnus and Morgan, 1987, p. 127).
+
+In physics, engineering, and chemistry a serious attempt
+has been made to standardize symbols.
+The International Organization for Standardization (ISO) has published
+international regulations (ISO Standards Handbook, 1982)
+and the International Union of Pure and Applied Physics (IPU)
+has issued recommendations (CRC Handbook of Chemistry and Physics, 1988).
+These regulations are generally followed by the profession, with one major
+exception: the treatment of lowercase single-letter constants
+(such as the base of natural logarithms $\eu$ and the imaginary unit
+$\iu$\ --- very often written as $e$ and $i$, contrary to ISO regulations)
+or operators (such as the derivative operator $\rd$ --- often
+written as $d$).\footnote{See Beccari (1997) for further discussion
+and some \LaTeX\ tricks for physicists and engineers.}
+It appears that the profession finds that single-letter lowercase roman
+mathematical symbols look odd. There are examples of this
+phenomenon in econometrics too: one often sees
+$\det(A)$ for determinant, $\E(x)$ for expectation,
+but $r(A)$ for rank.
+
+Notation matters. A good and consistent notation helps in the
+understanding, communication and development of our profession.
+In the Renaissance, mathematics was written in a verbal style with
+p for plus, m for minus and R for square root. So, when Cardano
+(1501--1576) writes
+\begin{gather*}
+5\text{p}:\text{Rm}:15\\
+5\text{m}:\text{Rm}:15\\
+25\text{m}:\text{m}:15\;\text{qd}\;\text{est}\;40,
+\end{gather*}
+he means
+$(5+\sqrt{-15})(5-\sqrt{-15})=25-(-15)=40$,
+see Kline (1972, p. 260).
+There is no doubt that the development of good notation has been
+of great importance in the history of mathematics.
+
+In this paper we attempt to harmonize the various practices in econometrics
+notation. It proposes a fully integrated and internally consistent
+framework for notation and abbreviations, which is as close as
+possible to existing common practice and also obeys ISO regulations.
+The symbols used are instantly recognizable and interpretable,
+thus minimizing ambiguity and enhancing reading efficiency.
+Using a common notation will save authors the effort to define
+their notation in every paper.
+Only special notation needs to be defined.
+We have tried to design our standard in a flexible manner,
+allowing for future extensions in specialized fields.
+
+There are many problems in designing a consistent notation.
+Our hope is to provide a useful benchmark
+and starting point for an evolving process.
+The notation is \LaTeX\ oriented.
+Many \LaTeX\ definitions are provided,
+and the complete list of definitions can be downloaded from
+{\it http:/\!/cwis.kub.nl/$\sim$few5/center/staff/magnus/notation.htp}.
+%
+\section{Vectors and matrices}
+Vectors are lowercase and matrices are uppercase symbols.
+Moreover, both vectors and matrices are written in bold-italic.
+The vectors $\va$, $\vb$,\dots, $\vz$ are produced by
+\type{va}, \type{vb},\dots, \type{vz},
+and the matrices $\mA$, $\mB$,\dots, $\mZ$ by
+\type{mA}, \type{mB},\dots, \type{mZ}.
+
+Vectors can also be denoted by Greek lowercase letters:
+$\valpha$,\dots, $\vomega$
+(\type{valpha},\dots, \type{vomega}),
+and matrices by Greek uppercase letters,
+such as $\mGamma$ (\type{mGamma})
+or $\mTheta$ (\type{mTheta}).
+
+We write
+$$
+\va=
+\begin{pmatrix}
+a_1\\
+a_2\\
+\vdots\\
+a_n
+\end{pmatrix},
+\qquad
+\mA=
+\begin{pmatrix}
+a_{11} & a_{12} &\dots & a_{1n}\\
+a_{21} & a_{22} &\dots & a_{2n}\\
+\vdots & \vdots && \vdots\\
+a_{m1} & a_{m2} &\dots & a_{mn}\\
+\end{pmatrix}
+$$
+for an $n\times 1$ vector $\va$ and an $m\times n$ matrix $\mA$.
+If one has a choice, we recommend that $m\geq n$.
+
+We write $\mA=(a_{ij})$ or $\mA=(\mA)_{ij}$ to denote a typical
+element of the matrix $\mA$.
+The $n$ columns of $\mA$ are denoted by
+$\va_{\bcdot 1}$, $\va_{\bcdot 2}$, \dots, $\va_{\bcdot n}$,
+and the $m$ rows by
+$\va'_{1\bcdot}$, $\va'_{2\bcdot}$, \dots, $\va'_{m\bcdot}$,
+where transpose is denoted by a prime.
+The symbol $\bcdot$ is produced by \type{bcdot} since
+\type{cdot} ($\cdot$) is too small
+and \type{bullet} ($\bullet$) is too large.
+Hence,
+$$
+\mA=\left(\va_{\bcdot 1}, \va_{\bcdot 2}, \dots, \va_{\bcdot n}\right),
+\qquad
+\mA'=\left(\va_{1\bcdot}, \va_{2\bcdot}, \dots, \va_{m\bcdot}\right).
+$$
+However, we may write
+$\mA=\left(\va_{1}, \va_{2}, \dots, \va_{n}\right)$,
+and occasionally
+$\mA'=\left(\va_{1}, \va_{2}, \dots, \va_{m}\right)$,
+when there is no possibility of confusion,
+but not both of these in one paper.
+A vector $\va$ denotes a column and $\va'$ denotes a row.
+Special vectors are:
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\quad \=  \kill
+$\vzeros$, $\vzeros_n$ \> null vector $(0,0,\dots,0)'$ (\type{vzeros})\\
+$\vones$, $\vones_n$ \> sum vector $(1,1,\dots,1)'$  (\type{vones})\\
+$\ve_i$ \> $i$-th column of $\mI_n$ (\type{ve\_i}).
+\end{tabbing}
+Special matrices are:
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \= \kill
+$\mZeros$, $\mZeros_{mn}$ \> null matrix of order $m\times n$ (\type{mZeros}) \\
+$\mI$, $\mI_n$ \> identity matrix of order $n\times n$ (\type{mI}).
+\end{tabbing}
+Note that the null vector $\vzeros$ is smaller
+than the null matrix $\mZeros$.
+We say that two or more matrices (vectors) are {\it conformable\/}
+if their sum or product is defined. For example, the equation
+$\mA\vx=\vb$ only makes sense if the dimension of $\vx$ equals the number
+of columns of $\mA$ and the dimension of $\vb$ equals the number
+of its rows.
+If this is the case then $\mA$, $\vx$ and $\vb$ are conformable.
+
+Two vectors $\va$ and $\vb$ for which $\va'\vb=0$ are {\it orthogonal\/}.
+We also write $\va\bot\vb$ (\type{bot}).
+The column space of $\mA$ is denoted $\col(\mA)$ (\type{col}) and denotes
+the set $\{\vx: \vx=\mA\vc \text{ for some } \vc\ne \vzeros\}$.
+The null space of $\mA$ is the set $\{\vx:\mA\vx=\vzeros\}$.
+The null space of $\mA'$ is denoted $\col^{\bot}(\mA)$
+and is called the {\it orthogonal complement\/} of $\col(\mA)$.
+It defines the set $\{\vx:\mA'\vx=\vzeros\}$,
+which can also be written as $\{\vx:\vx\bot\mA\}$.
+%
+\section{Operations on matrix $A$ and vector $a$}
+The following standard operations are proposed.
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \=  \kill
+$\mA'$ \> transpose   \\
+$\mA^{-1}$ \> inverse   \\
+$\mA^{+}$ \> Moore-Penrose inverse   \\
+$\mA^{-}$ \> generalized inverse (satisfying $\mA\mA^{-}\mA=\mA$)   \\
+$\dg \mA$, $\dg(\mA)$ \> diagonal matrix containing the diagonal elements \\
+\> of $\mA$ (\type{dg})   \\
+$\diag(a_1,\dots,a_n)$ \> diagonal matrix containing $a_1,\dots,a_n$ \\
+\> on the diagonal (\type{diag})  \\
+$\diag(\mA_1,\dots,\mA_n)$ \> block-diagonal matrix with $\mA_1,\dots,\mA_n$ on
+the diagonal \\
+$\mA^2$ \> $\mA\mA$  \\
+$\mA^{1/2}$ \> (unique) square root of positive semidefinite matrix  \\
+$\mA^p$ \> $p$-th power  \\
+$\mA^{\#}$ \> adjoint (matrix)\\
+$\mA^*$ \> conjugate transpose\\
+\> (If $\mA:=\mU + \iu\mV$ then $\mA^*=\mU' - \iu\mV'$)\\
+$\mA_{k}$ \> principal submatrix of order $k\times k$\\
+$(\mA, \mB)$, $(\mA:\mB)$ \> partitioned matrix   \\
+$\vec \mA$, $\vec(\mA)$ \> vec operator (\type{vec})  \\
+$\vech \mA$, $\vech(\mA)$ \> vector containing $a_{ij}\,(i\geq j)$ (\type{vech})\\
+$\rk(\mA)$ \> rank (\type{rk})   \\
+$\lambda_{i}$, $\lambda_{i}(\mA)$ \> $i$-th eigenvalue (of $\mA$)\\
+$\tr \mA$, $\tr(\mA)$ \> trace (\type{tr})   \\
+$\etr \mA$, $\etr(\mA)$ \> $\exp(\tr \mA)$ (\type{etr}) \\
+$|\mA|$, $\det \mA$, $\det(\mA)$ \> determinant (\type{det}) \\
+$\|\mA\|$ \> norm of matrix ($\sqrt{(\tr \mA^*\mA)}$) (\type{|}) \\
+$\|\va\|$ \> norm of vector ($\sqrt{(\va^*\va)}$)\\
+$\mA\geq \mB$, $\mB\leq \mA$ \> $\mA-\mB$ positive semidefinite
+(\type{geq}, \type{leq}\type{le})\\
+$\mA>\mB$, $\mB<\mA$ \> $\mA-\mB$ positive definite ($>$, $<$)\\
+$\mA\otimes\mB$ \> Kronecker product (\type{otimes})  \\
+$\mA\odot\mB$ \> Hadamard product (\type{odot})\\
+$\mK_{mn}$ \> commutation matrix    \\
+$\mK_n$ \> $\mK_{nn}$ \\
+$\mN_n$ \> $\frac{1}{2}(\mI_{n^2}+\mK_n)$   \\
+$\mD_n$ \> duplication matrix    \\
+$\mJ_{k}(\lambda)$ \> Jordan block of order $k\times k$
+\end{tabbing}
+Ambiguity can arise between the symbol $|\cdot|$ for determinant and
+the same symbol for absolute value, for example in the
+multivariate transformation theorem.
+This ambiguity can be avoided by writing $|\det A|$
+for the absolute value of a determinant.
+
+If we have a symmetric matrix $\mA$ of order $n\times n$, then
+the eigenvalues are real and can be ordered.
+We recommend the ordering
+$$
+\lambda_1\geq\lambda_2\geq\dots\geq\lambda_n,
+$$
+since there are many cases where it is desirable that
+$\lambda_1$ denotes the largest eigenvalue.
+%
+\section{The linear regression model}
+We write the linear regression model
+$\vy=\mX\vbeta +\vepsi$
+as
+$$
+\vy=\sum_{h=1}^k \beta_h \vx_{\bcdot h} + \vepsi
+$$
+or as
+$$
+y_i = \vx'_{i\bcdot}\vbeta + \epsi_i\quad (i=1,2,\dots,n)
+$$
+or as
+$$
+y_i = \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_k x_{ik} + \epsi_i\quad (i=1,2,\dots,n).
+$$
+If there is a constant term this specializes to
+$$
+y_i = \beta_1 + \beta_2 x_{i2} + \dots + \beta_k x_{ik} + \epsi_i\quad (i=1,2,\dots,n).
+$$
+In the two-variable case one can write
+$$
+y_i = \beta_1 + \beta_2 x_{i} + \epsi_i
+\quad
+\text{or}
+\quad
+y_i = \alpha + \beta x_{i} + \epsi_i,
+$$
+but {\it not\/}
+$y_i = \beta_0 + \beta_1 x_{i} + \epsi_i$,
+since $\beta_0$ is often used for other purposes,
+in particular as the value of the parameter
+$\beta$ under the null hypothesis.
+
+The observations are typically indexed $i=1,\dots,n$ (in cross sections) or
+$t=1,\dots,T$ (in time series). If there are two cross sections one can
+use $i$ and $j$; if there are two time series one uses $t$ and $s$.
+There are $k$ regressors (not $K$) indexed by $h=1,\dots,k$.
+Acronyms and special symbols take precedence over index labels.
+For example, in defining the $t$-statistic one should not
+use $t$ as a summation index, and in formulae involving the imaginary unit
+$\iu$ confusion can be avoided by not using $i$ as an index.
+
+This formulation is not without controversy.
+Some authors write
+$X_{ht}$ instead of $x_{ih}$, which is unsatisfactory, since $\mX$ is an
+$n\times k$ matrix and hence in their formulation $X_{ht}$ is the $th$-th
+element of $\mX$.
+Some write $\beta_0$ for the first element of $\vbeta$, if the
+regression contains a constant term, and then let $k$ denote the number
+of `real' regressors (so that $\mX$ has $k+1$ columns).
+We prefer to avoid this formulation for many reasons. It is
+convenient to always have $k$ regressors independent of whether there
+is a constant term or not. Also, the inclusion of a constant
+does make an important difference, for example in potentially
+non-stationary time series, and it can translate into a `real' variable
+such as a drift, which alters distributions and time paths.
+
+Another issue is the disturbance term. We denote this by $\vepsi$
+(\type{epsi} for a scalar, \type{vepsi} for a vector)
+if the disturbances (or errors) are spherically distributed.\footnote{The
+vector $\vepsi$ is spherically distributed if $\vepsi$
+and $\mH\vepsi$ have identical distributions for every orthogonal
+matrix $\mH$.}
+If the errors are not spherical, we denote them by $\vu$.
+
+Estimators are random variables which say something about a fixed but unknown
+quantity, called a parameter.
+They are denoted by `hats', such as $\hat{\vbeta}$.
+(\type{hat\{$\backslash$vbeta\}}).
+If we have a second estimator of $\vbeta$ this is denoted by a `tilde':
+$\tilde{\vbeta}$. The realization of an estimator is an estimate.
+
+Predictors are like estimators, except that they say something about a random variable.
+They are also denoted by `hats' ($\hat{\vy}$, $\hat{\vepsi}$)
+or tildes ($\tilde{\vy}$, $\tilde{\vepsi}$).
+The realization of a predictor is the `prediction'.
+
+The symbols
+$R^2$ and $\bar{R}^2$ denote the coefficient of determination
+and the adjusted coefficient of determination, respectively.
+
+In the case of OLS (ordinary least squares), it is tradition to write
+$\vb$ instead of $\hat{\vbeta}$ for the OLS estimator $(\mX'\mX)^{-1}\mX'\vy$,
+$\ve$ instead of $\hat{\vepsi}$ for the residuals,
+and $s^2$ instead of $\hat{\sigma}^2$ for the OLS estimator of
+$\sigma^2$.\footnote{In line with current practice, we write the estimator for
+$\sigma^2$ as $\hat{\sigma}^2$
+(\type{hat\{$\backslash$sigma\}})
+and not as $\hat{\sigma^2}$, although strictly speaking
+the latter is the correct notation.}
+We prefer not to do so, in order to stress the randomness of the estimators
+(one often thinks of $\vb$ as a vector of constants).
+
+If $\va$ is a vector, say of order $n$,
+then $\bar{a}$ (\type{bar})
+denotes the average of its components:
+$\bar{a}=\vones'\va/\vones'\vones$.
+
+It is customary to write
+$$
+\mP_{\mX}=\mX(\mX'\mX)^+\mX',\qquad
+\mM_{\mX}=\mI_n - \mP_{\mX}
+$$
+where $\mX$ has $n$ rows. If there is no possibility of confusion,
+we can write $\mM$ and $\mP$ instead of $\mM_{\mX}$ and $\mP_{\mX}$.
+The matrix which puts a vector in deviation form is thus
+$$
+\mM_{\vones}=\mI_n-(1/n)\vones\vones',
+$$
+and the vector $\mM_{\vones}\va$
+denotes the vector $\va$ in deviation from its mean.
+
+We denote a null hypothesis as $\rH_0$ (\type{rH}) and an alternative
+as $\rH_A$ (not $\rH_a$ since $a$ may be a scalar
+or may refer to `asymptotic').
+The statement of $\rH_0$:
+$\mR'\vbeta=\vc$ is preferred over
+$\mR\vbeta=\vr$. In the latter formulation,
+the single-hypothesis case is usually written as
+$\vw'\vbeta=r$ or $\vr'\vbeta=r$, neither of which is ideal.
+However, if one writes
+$\mR'\vbeta=\vc$, this specializes to $\vr'\vbeta=c$
+in the one-dimensional case.
+This has the additional advantage that we can use $r$ to denote the
+number of restrictions (dimension of $\vc$).
+In the special case where $\mR=\mI_r$ (or where $\mR$ is square and
+invertible), we usually write $\vbeta=\vbeta_0$ rather than
+$\vbeta=\vc$.
+
+The GLS model is written
+$$
+\vy=\mX\vbeta + \vu,\qquad \vu\distr \text{N}(\vzeros,\mOmega),
+$$
+where $\mOmega=\sigma^2\mV$.
+We prefer the use of $\mOmega$ over $\mSigma$,
+which can be confused with the summation symbol.
+If the variance matrix $\mOmega$ contains parameters, we write
+$\mOmega=\mOmega(\valpha)$. The dimension of $\valpha$ is $l$.
+Thus, the whole model contains $m=k+l$ unknown parameters.
+The complete parameter vector is denoted $\vtheta=(\vbeta',\valpha')'$
+and is of dimension $m$.
+
+For the {\it simultaneous equations model\/} our starting point is the
+(univariate) linear regression model
+$$
+y_i = \vx'_{i\bcdot}\vbeta + u_i\quad (i=1,2,\dots,n).
+$$
+This can be generalized to the {\it multivariate\/} linear regression
+model:
+$$
+\vy'_{i\bcdot} = \vx'_{i\bcdot}\mB + \vu'_{i\bcdot}\quad (i=1,2,\dots,n),
+$$
+where $\vy_{i\bcdot}$ and $\vu_{i\bcdot}$ are random $m\times 1$ vectors
+and $\mB$ is a $k\times m$ matrix.
+The univariate case is obtained as a special case when $m=1$.
+The simultaneous equations model provides a further generalization:
+$$
+\vy'_{i\bcdot}\mGamma = \vx'_{i\bcdot}\mB + \vu'_{i\bcdot}\quad (i=1,2,\dots,n),
+$$
+where $\mGamma$ is an $m\times m$ matrix.
+This is the {\it structural form\/} of the simultaneous equations model.
+In matrix notation this becomes
+$\mY\mGamma = \mX\mB + \mU$. If $\mGamma$ is invertible, we obtain
+the {\it reduced form\/}
+$\mY=\mX\mPi + \mV$, where
+$\mPi=\mB\mGamma^{-1}$ and $\mV=\mU\mGamma^{-1}$.
+%
+\section{Greek symbols}
+Some Greek lowercase letters have variant forms and these can
+be used to mean different things than the usual letter.
+We have:
+\begin{tabbing}
+\qquad\qquad \= \qquad\qquad\qquad\qquad\qquad\qquad \= \qquad\qquad \= \qquad\qquad \=  \kill
+$\eps$ \> \type{epsilon}, \type{eps} \> $\varepsilon$ \> \type{varepsilon}, \type{epsi}  \\
+$\theta$ \> \type{theta} \> $\vartheta$ \> \type{vartheta} \\
+%$\kappa$ \> \type{kappa} \> $\varkappa$ \> \type{varkappa} \\
+$\pi$ \> \type{pi} \> $\varpi$ \> \type{varpi} \\
+$\rho$ \> \type{rho} \> $\varrho$ \> \type{varrho} \\
+$\sigma$ \> \type{sigma} \> $\varsigma$ \> \type{varsigma} \\
+$\phi$ \> \type{phi} \> $\varphi$ \> \type{varphi}
+\end{tabbing}
+We shall use $\epsi$ (\type{epsi} for a scalar, \type{vepsi} for a vector)
+for a disturbance term and $\eps$ (\type{eps}) for
+an arbitrarily small positive number.
+Also, we use $\theta$ (\type{theta}) to denote a variable
+and $\vartheta$ (\type{vartheta}) for a function.
+%
+\section{Mathematical symbols, functions and operators}
+Definitions, implications, convergence, and transformations are denoted by
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \=  \kill
+$\equiv$ \> identity, equivalence (\type{equiv}) \\
+$a:=b$ \> defines $a$ in terms of $b$ \\
+$\Longrightarrow$ \> implies (\type{implies})\\
+$\Longleftrightarrow$ \> if and only if (\type{iff})\\
+$\to$, $\longto$ \> converges to (\type{to}, \type{longto}) \\
+$x\mapsto y$ \> transformation from $x$ to $y$ (\type{mapsto})
+\end{tabbing}
+We write $f(x)\approx g(x)$ (\type{approx}) if the two functions
+are approximately equal in some sense depending on the context.
+If $f(x)$ is proportional to $g(x)$ we write
+$f(x)\propto g(x)$ (\type{propto}).
+We say that `$f(x)$ is at most of order $g(x)$' and write
+$f(x)=O(g(x))$, if $|f(x)/g(x)|$ is bounded above in some
+neighborhood of $c$ (possibly $\pm\infty$), and we say that
+`$f(x)$ is of order less than $g(x)$' and write
+$f(x)=o(g(x))$, if $f(x)/g(x)\to 0$ when $x\to c$.
+Finally, we write $f(x)\sim g(x)$ (\type{sim}) if
+$f(x)/g(x)\to 1$ when $x\to c$. The two functions are then said
+to be `asymptotically equal'.\footnote{The ISO
+prescribes the symbol $\simeq$ (\type{simeq}) for asymptotic equality,
+but $\sim$ is common practice in econometrics and statistics,
+even though the same symbol is also
+used for `is distributed as'.}
+Notice that when $f(x)$ and $g(x)$ are asymptotically equal, then
+$f(x)\approx g(x)$ and also $f(x)=O(g(x))$, but not vice versa.
+
+For example, when $\phi$ and $\Phi$ denote the p.d.f. and c.d.f. of the
+standard-normal distribution, respectively, we write
+the leading term (first term) of the asymptotic expansion
+$$
+\frac{\Phi(x)}{\phi(x)}\sim \frac{1}{|x|}\qquad \text{as } x\to -\infty.
+$$
+However, there are many good local approximations of this ratio which
+are not necessarily asymptotically equal to it.
+
+The usual sets are denoted as follows:
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \=  \kill
+$\SN$ \> natural numbers $1,2,\dots$ \> \type{SN} \\
+$\SZ$ \> integers $\dots,-2,-1,0,1,2,\dots$ \> \type{SZ} \\
+$\SQ$ \> rational numbers \> \type{SQ} \\
+$\SR$ \> real numbers \> \type{SR} \\
+$\SC$ \> complex numbers \> \type{SC}
+\end{tabbing}
+Superscripts denote the dimension and subscripts the relevant subset.
+For example,
+$\SR^2 = \SR\times\SR$ denotes the real plane,
+$\SR^n$ the set of real $n\times 1$ vectors, and
+$\SR^{m\times n}$ the set of real $m \times n$ matrices.
+The set $\SR^n_{+}$ denotes the positive orthant of $\SR^n$, while
+$\SZ_+$ denotes the set of positive integers (hence, $\SZ_+=\SN$) and
+$\SZ_{0,+}$ denotes the non-negative integers.
+Finally, $\SC^{n\times n}$ denotes the set of complex $n\times n$ matrices.
+
+Set differences are denoted by a backslash (\type{backslash}).
+For example, $\SN=\SZ_{0,+}\backslash\{0\}$.
+Real-line intervals defined by $x$ in $a\leq x<b$ are denoted by
+$[a,b)$. Occasionally it might be unclear whether $(a,b)$ indicates a real-line
+interval or a point in $\SR^2$. In that case the interval
+$a<x<b$ can alternatively be written as $]a,b[$.
+
+Sequences are special ordered sets. They are delimited, as usual,
+by braces (curly brackets). It is often convenient to write
+$\{\mZ_j\}_m^n$ (or simply $\{\mZ_j\}$) for the sequence of matrices
+$\mZ_m$, $\mZ_{m+1}$,\dots,$\mZ_n$.
+
+Other symbols used are:
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \=  \kill
+$\in$ \> belongs to (\type{in}) \\
+$\notin$ \> does not belong to (\type{notin}) \\
+$\{x: x \in S, x$ satisfies $P\}$ \> set of all elements of $S$ with
+property $P$ \\
+$\subseteq$ \> is a subset of (\type{subseteq}) \\
+$\subset$ \> is a proper subset of (\type{subset}) \\
+$\cup$ \> union  (\type{cup}) \\
+$\cap$ \> intersection  (\type{cap}) \\
+$\emptyset$ \> empty set (\type{emptyset})  \\
+$A^{c}$ \> complement of $A$   \\
+$B\backslash A$ \> $B\cap A^c$  \\
+%$\overset{\circ}{S}$ \> interior of $S$ (\type{overset})\\
+$\interior{S}$ \> interior of $S$ (\type{interior\{S\}})   \\
+$S'$ \> derived set of $S$   \\
+$\bar{S}$ \> closure of $S$ (\type{bar\{S\}})  \\
+$\partial S$ \> boundary of $S$ (\type{partial S})
+\end{tabbing}
+We denote functions by
+\begin{tabbing}
+\hspacesymbols \=   \kill
+$f: S \to T$ \> function defined on $S$ with values in $T$   \\
+$f$, $g$, $\varphi$, $\psi$, $\vartheta$ \> scalar-valued function   \\
+$\vf$, $\vg$ \> vector-valued function   \\
+$\mF$, $\mG$ \> matrix-valued function   \\
+$\vg \circ \vf$, $\mG \circ \mF$ \> composite function (\type{circ}) \\
+$g*f$ \> convolution $(g*f)(x)=\int_{-\infty}^{\infty}g(y)f(x-y)\rd y$
+\end{tabbing}
+For their differentials, derivatives and differences, we write
+\begin{tabbing}
+\hspacesymbols \=   \kill
+$\rd$ \> differential (\type{rd})  \\
+$\rd^n$ \> $n$-th order differential   \\
+$\rD_{j}\varphi(\vx)$ \> partial derivative (\type{rD}),
+$\partial\varphi(\vx)/\partial x_j$ \\
+$\rD_{j}f_i(\vx)$ \> partial derivative,
+$\partial f_i(\vx)/\partial x_j$ \\
+$\rD_{kj}^2\varphi(\vx)$ \> second-order partial derivative,
+$\partial\rD_{j}\varphi(\vx)/\partial x_k$ \\
+$\rD_{kj}^2 f_i(\vx)$ \> second-order partial derivative,
+$\partial\rD_j f_i(\vx)/\partial x_k$ \\
+$\varphi^{(n)}(x)$ \> $n$-th order derivative of $\varphi(x)$ \\
+$\rD\varphi(\vx)$, $\partial\varphi(\vx)/\partial \vx'$ \> derivative of $\varphi(\vx)$ \\
+$\rD \vf(\vx)$, $\partial \vf(\vx)/\partial \vx'$ \> derivative (Jacobian matrix) of $\vf(\vx)$ \\
+$\rD \mF(\mX)$ \> derivative (Jacobian matrix) of $\mF(\mX)$  \\
+$\partial\vec \mF(\mX)/\partial(\vec \mX)'$ \> derivative of $\mF(\mX)$, alternative notation\\
+$\nabla\varphi$, $\nabla \vf$, $\nabla \mF$ \> gradient (transpose of derivative) (\type{nabla})\\
+$\rH\varphi(\vx)$, $\partial^2\varphi(\vx)/\partial \vx\partial \vx'$ \>
+second derivative (Hessian matrix) of $\varphi(\vx)$ (\type{rH})\\
+$\rL$, $\rB$ \> backward shift operator: $\rL x_t=x_{t-1}$  (\type{rL},\type{rB})\\
+$\diff$ \> (backward) difference operator: \\
+\>$\diff x_t=x_t-x_{t-1}$  (\type{diff})\\
+$\fordiff$ \> forward difference operator: \\
+\> $\fordiff x_t=x_{t+1}-x_t$ (\type{fordiff})\\
+$[f(x)]_a^b$,\; $f(x)|_a^b$ \> $f(b)-f(a)$
+\end{tabbing}
+Instead of $\varphi^{(1)}(x)$ and $\varphi^{(2)}(x)$, one can
+write the more common
+$\varphi'(x)$ and $\varphi''(x)$, but otherwise we prefer to reserve
+the prime for matrix transposes rather than derivatives. Notice the
+difference between the differencing operator \type{diff} ($\diff$)
+and the gradient \type{nabla} ($\nabla$).
+
+We use $\rL$ (or $\rB$) rather than $\calL$ for the lag operator in order to avoid
+confusion with the Laplace transform. This and
+other useful transforms are defined by
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \=  \kill
+$\calF\{\cdot\}$ \> Fourier transform (\type{calF}) \\
+$\calF^{-1}\{\cdot\}$ \> inverse Fourier transform \\
+$\calL\{\cdot\}$ \> Laplace transform (\type{calL}) \\
+$\calL^{-1}\{\cdot\}$ \> inverse Laplace transform \\
+$\calM\{\cdot\}$ \> Mellin transform (\type{calM}) \\
+$\calM^{-1}\{\cdot\}$ \> inverse Mellin transform
+\end{tabbing}
+Finally, various other symbols in common use are
+\begin{tabbing}
+\hspacesymbols \=   \kill
+$\iu$ \> imaginary unit (\type{iu}) \\
+${\eu}$, $\exp$ \> exponential (\type{eu}, \type{exp}) \\
+$\log$ \> natural logarithm (\type{log})\\
+$\log_a$ \> logarithm to the base $a$ \\
+$!$ \> factorial \\
+$\delta_{ij}$ \> Kronecker delta \\
+$\sgn(x)$ \> sign of $x$ (\type{sgn}) \\
+$\lfloor x\rfloor$, $\ip(x)$ \> integer part of $x$, that is,
+largest integer $\leq x$ \\
+\> (\type{lfloor}, \type{rfloor}, \type{ip}) \\
+$|x|$ \> absolute value (modulus) of scalar $x\in\SC$ \\
+$x^*$ \> complex conjugate of scalar $x\in\SC$ \\
+$\Re(x)$ \> real part of $x$  (\type{Re}) \\
+$\Im(x)$ \> imaginary part of $x$  (\type{Im}) \\
+$\varGamma(x)$ \> gamma (generalized factorial) function,\\
+\> satisfying $\varGamma(x+1)=x\varGamma(x)$ \\
+$B(x,y)$ \> beta function, $\varGamma(x)\varGamma(y)/\varGamma(x+y)$ \\
+$1_{\calK}$ \> indicator function (use $1$, not $I$): \\
+\> equals 1 if condition $\calK$ is satisfied, 0 otherwise\\
+$B(\vc)$, $B(\vc;r)$, $B(\mC;r)$ \> neighborhood (ball) with center $\vc$ ($\mC$)
+and radius $r$\\
+$\calV^{n\times k}$ \> Stiefel manifold: set of real $n\times k$
+matrices $\mX$ \\
+\>such that $\mX'\mX=\mI_k$\, ($k\le n$) (\type{calV}) \\
+$\calO^n$ \> $\calV^{n\times n}$, orthogonal group of dimension $n$ (\type{calO}) \\
+$\calO_+^n$ \> proper orthogonal group of dimension $n$ \\
+\>(orthogonal $n\times n$ matrices with determinant $+1$) \\
+$\calS^n$ \> $\calV^{n\times 1}$, unit sphere in $\SR^n$ (\type{calS})
+\end{tabbing}
+The Stiefel manifold $\calV^{n\times k}$ is also denoted
+as $\calV^{k\times n}$ in the literature. We recommend the former
+notation which is in line with $\SR^{n\times k}$.
+%
+\section{Statistical symbols, functions and operators}
+The following symbols are commonly used.
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \=  \kill
+$\distr$ \> is distributed as (\type{distr})  \\
+$\adistr$ \> is asymptotically distributed as (\type{adistr}) \\
+$\Pr(\cdot)$ \> probability (\type{Pr})  \\
+$\E(\cdot)$ \> expectation (\type{E})  \\
+$\E(\cdot|\cdot)$ \> conditional expectation \\
+$\var(\cdot)$ \> variance (matrix) (\type{var})   \\
+$\cov(\cdot,\cdot)$ \> covariance (matrix) (\type{cov})   \\
+$\corr(\cdot,\cdot)$ \> correlation (matrix) (\type{corr})  \\
+$L(\vtheta)$ \> likelihood function \\
+$\ell(\vtheta)$ \> log-likelihood function (\type{ell}) \\
+$\vq(\vtheta)$ \> score vector \\
+$\Hesmat(\vtheta)$ \> Hessian matrix (\type{Hesmat}) \\
+$\Infmat$ \> (Fisher) information matrix (\type{Infmat})   \\
+$\calF_t$ \> filtration at time $t$ (\type{calF})\\
+$t$ \> $t$-statistic, $t$-value \\
+$\to$, $\longto$ \> converges a.s. (\type{to}, \type{longto}) \\
+$\pto$ \> converges in probability (\type{pto}) \\
+$\dto$ \> converges in distribution (\type{dto}) \\
+$\wto$ \> converges weakly (\type{wto}) \\
+$\plim$ \> probability limit (\type{plim}) \\
+$O_p(g(x))$ \> at most of probabilistic order $g(x)$ \\
+$o_p(g(x))$ \> of probabilistic order less than $g(x)$
+\end{tabbing}
+Notice that the symbol $\to$ ($\longto$) indicates both convergence
+and a.s. convergence.
+The symbol $\wto$ for weak convergence is preferred to
+$\Longrightarrow$, which denotes logical implication.
+The matrix $-\Hesmat$ is also called the observed information matrix,
+while its expectation
+$\Infmat:=-\E(\Hesmat)$ is the expected information matrix.
+
+The main distributions in statistics are denoted as follows.
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \=  \kill
+$\Bin(n,p)$ \> binomial distribution (\type{Bin}) \\
+$\Poi(\mu)$ \> Poisson distribution (\type{Poi}) \\
+$\rU(a,b)$ \> uniform distribution (\type{rU}) \\
+$\rN_{m}(\vmu,\mOmega)$ \> $m$-dimensional normal distribution (\type{rN})  \\
+$\LN(\mu,\sigma^2)$ \> lognormal distribution (\type{LN}) \\
+$\phi(\cdot)$ \> standard-normal p.d.f. (\type{phi}) \\
+$\Phi(\cdot)$ \> standard-normal c.d.f. \\
+$\text{IN}_m(\vmu_i,\mOmega_i)$ \> sequence $i=1,2,\dots$ of independent \\
+\>$m$-dimensional normal distributions \\
+$\chi^2_{n}(\delta)$ \> chi-squared distribution with $n$ d.f.\\
+\>and non-centrality parameter $\delta$. \\
+$\chi^2_{n}$ \> central chi-squared ($\delta=0$) \\
+$\rt_n(\delta)$ \> Student distribution with $n$ d.f. and \\
+\>noncentrality $\delta$ (\type{rt}) \\
+$\rt_n$ \> central t ($\delta=0$) \\
+$\rC(a,b)$ \> Cauchy distribution (\type{rC}) \\
+$\rF_{m,n}(\delta)$ \> Fisher distribution with $m$ (numerator) and \\
+\>$n$ (denominator) d.f. and non-centrality $\delta$ (\type{rF})\\
+$\rF_{m,n}$ \> central F ($\delta=0$) \\
+$\Gamma(\alpha,\lambda)$ \>  gamma distribution \\
+$\rB(a,b)$ \> beta distribution (\type{rB}) \\
+$W(\tau)$, $B(\tau)$ \> standard Wiener process (Brownian motion)\\
+\>on $\tau\in [0,1]$
+\end{tabbing}
+We use the word `expectation' to denote mathematical expectation of a
+random vector $\vx$, written $\E(\vx)$. The word `average' refers to
+taking the average of some numbers:
+$\bar{x}=(1/n)\sum_{i=1}^n x_i$. The word `mean' which could indicate
+either is best avoided. Like `expectation', the words `variance' ($\var$),
+`covariance' ($\cov$), and
+`correlation' ($\corr$)
+indicate population parameters. The corresponding
+sample parameters are called `sample variance', `sample covariance' and
+`sample correlation'.
+
+The `standard deviation' is the positive square root of the variance.
+If $\theta$ is a parameter which we estimate by $\hat{\theta}$,
+then this estimator is a random variable with a variance
+$\var(\hat{\theta})$
+and a standard deviation
+$\sqrt{\var(\hat{\theta})}$.
+In general, this standard deviation depends on unknown parameters.
+Both the estimator of the standard deviation
+and its realization are called the `standard error'.
+The $t$-statistic is a random variable (not necessarily Student
+distributed); its realization is the $t$-value.
+%
+\section{Abbreviations and acronyms}
+\begin{tabbing}
+\hspacesymbols \= \hspacesymbols\qquad\quad \=  \kill
+2SLS \> two-stage least squares \\
+3SLS \> three-stage least squares \\
+AR($p$) \> autoregressive process of order $p$ \\
+ARCH \> autoregressive conditional heteroskedasticity \\
+ARIMA($p,d,q$)\> autoregressive integrated moving-average process \\
+ARMA($p,q$) \> autoregressive moving-average process \\
+a.s. \> almost surely   \\
+BAN \> best asymptotically normal \\
+c.d.f. \> cumulative distribution function \\
+c.f. \> characteristic function \\
+c.g.f. \> cumulant-generating function \\
+CLT \> central limit theorem \\
+CUAN \> consistent uniformly asymptotically normal \\
+d.f. \> degrees of freedom \\
+DW \> Durbin-Watson \\
+FCLT \> functional CLT (invariance principle) \\
+FGLS \> feasible generalized least squares \\
+FIML \> full-information maximum likelihood \\
+f.m.g.f. \> factorial moment-generating function \\
+GLS \> generalized least squares \\
+GMM \> generalized method of moments \\
+i.i.d. \> independent and identically distributed \\
+ILS \> indirect least squares \\
+I($d$) \> (fractionally) integrated process of order $d$ \\
+IV \> instrumental variable \\
+LAD \> least absolute deviations \\
+LIL \> law of iterated logarithm \\
+LIML \> limited-information maximum likelihood \\
+LLN \> law of large numbers \\
+LM \> Lagrange multiplier \\
+LR \> likelihood ratio \\
+LS[E] \> least squares [estimator]; see also 2SLS, 3SLS,\\
+\> FGLS, GLS, ILS, NLS, OLS, RLS  \\
+MA($q$) \> moving-average process of order $q$ \\
+m.g.f. \> moment-generating function \\
+ML[E] \> maximum likelihood [estimator]; \\
+\> see also FIML, LIML, QML  \\
+MSE \> mean squared error   \\
+NLS \> nonlinear least squares \\
+OLS \> ordinary least squares \\
+p.d.f. \> probability density function \\
+QML[E] \> quasi-maximum likelihood [estimator] \\
+RLS \> restricted least squares \\
+r.v. \> random variable \\
+s.e. \> standard error \\
+SUR \> seemingly unrelated regression\\
+UMP \> uniformly most powerful \\
+W \> Wald
+\end{tabbing}
+%
+\section{Hopes, fears and expectations}
+Our hope is that this paper may contribute towards the establishment
+of a common notation in econometrics.
+Our fear is that it will not.
+We realize that it will be difficult to get consensus.
+The $=$ sign for equality was first proposed
+in the middle of the 16th century, but 150 years later Bernoulli
+still used $\propto$ (stylized \ae, short for {\it aequalis\/})
+in his {\it Ars Conjectandi\/}.
+Thus, our expectation is that it could take 150 years before a
+common notation is adopted.
+%
+\section*{Acknowledgements}
+We are grateful to Paolo Paruolo for helpful comments.
+%
+\section*{References}
+Beccari, C. (1997). Typesetting mathematics for science and technology
+according to ISO 31/XI, {\it TUGboat 18}, No. 1, 39--48.\\
+\ \\
+Bollob\'{a}s, B. (ed.) (1986). {\it Littlewood's Miscellany\/}, Cambridge:
+Cambridge University Press.\\
+\ \\
+Kline, M. (1972). {\it Mathematical Thought From Ancient to Modern Times\/},
+New York: Oxford University Press.\\
+\ \\
+Magnus,~J. R. and M. S.~Morgan (1987). The ET interview: Professor
+J.~Tinbergen, {\it Econometric Theory 3}, 117--142.\\
+\ \\
+Mathematical Signs and Symbols for Use in the Physical Sciences and
+Technology, ISO 31/XI (1982). In {\it ISO Standards Handbook 2\/},
+186--214, Geneva: International Organization for Standardization.\\
+\ \\
+Symbols, Units and Nomenclature in Physics (1988). In R. C.~West (ed.),
+{\it CRC Handbook of Chemistry and Physics\/}, F156--F193, 1st Student Edition,
+Boca Raton, Florida: CRC Press, Inc.
+\end{document}
