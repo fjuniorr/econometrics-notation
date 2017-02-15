@@ -8,9 +8,10 @@
 \RequirePackage{bm}
 \RequirePackage{latexsym}
 \RequirePackage{amsmath}
-%\RequirePackage{braket}
-%\RequirePackage{cancel}
-%\RequirePackage{cool}
+\RequirePackage{braket}
+\RequirePackage{cancel}
+\RequirePackage{cool}
+\RequirePackage{mathtools}
 
 %%This is style file ee.sty.
 %%version 30/01/2002
@@ -176,25 +177,25 @@
 %
 % letters for (partial) differentiation
 %\newcommand{\rd}{\ensuremath{\mathrm{d}}}
-\makeatletter
-\newcommand{\rd}{\@ifnextchar^{\DIfF}{\DIfF^{}}}
-\def\DIfF^#1{%
-   \mathop{\mathrm{\mathstrut d}}%
-   \nolimits^{#1}\gobblespace}
-\def\gobblespace{\futurelet\diffarg\opspace}
-\def\opspace{%
-   \let\DiffSpace\!%
-   \ifx\diffarg(%
-   \let\DiffSpace\relax
-   \else
-   \ifx\diffarg[%
-   \let\DiffSpace\relax
-   \else
-   \ifx\diffarg\{%
-   \let\DiffSpace\relax
-   \fi\fi\fi\DiffSpace}
-\newcommand{\deriv}[3][]{\frac{\rd^{#1}#2}{\rd #3^{#1}}}
-\newcommand{\pderiv}[3][]{\frac{\partial^{#1}#2}{\partial #3^{#1}}}
+%\makeatletter
+%\newcommand{\rd}{\@ifnextchar^{\DIfF}{\DIfF^{}}}
+%\def\DIfF^#1{%
+%   \mathop{\mathrm{\mathstrut d}}%
+%   \nolimits^{#1}\gobblespace}
+%\def\gobblespace{\futurelet\diffarg\opspace}
+%\def\opspace{%
+%   \let\DiffSpace\!%
+%   \ifx\diffarg(%
+%   \let\DiffSpace\relax
+%   \else
+%   \ifx\diffarg[%
+%   \let\DiffSpace\relax
+%   \else
+%   \ifx\diffarg\{%
+%   \let\DiffSpace\relax
+%   \fi\fi\fi\DiffSpace}
+%\newcommand{\deriv}[3][]{\frac{\rd^{#1}#2}{\rd #3^{#1}}}
+%\newcommand{\pderiv}[3][]{\frac{\partial^{#1}#2}{\partial #3^{#1}}}
 %
 % operatornames
 \newcommand{\bias}{\operatorname{bias}}
@@ -203,7 +204,7 @@
 \newcommand{\cov}{\operatorname{cov}}
 \newcommand{\dg}{\operatorname{dg}}
 \newcommand{\diag}{\operatorname{diag}}
-\newcommand{\E}{\operatorname{E}}
+\renewcommand{\E}{\operatorname{E}}
 \newcommand{\etr}{\operatorname{etr}}
 \newoperator{\ip}{\mathrm{int}}{\nolimits}
 \newcommand{\kur}{\operatorname{kur}}
