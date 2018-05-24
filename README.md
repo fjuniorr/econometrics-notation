@@ -33,7 +33,7 @@ sudo mktexlsr
 mkdir -p ~/texmf/tex/latex/custom/
 ```
 
-Open the MiKTeX Console and go to the “Directories” tab in the "Settings" menu. Click on “+” and choose `~/texmf/tex/latex/custom/`. 
+Open the MiKTeX Console and go to the “Directories” tab in the "Settings" menu. Click on “+” and choose `~/texmf`. 
 
 ```
 cp /d/projects/econometrics-notation/ee.sty ~/texmf/tex/latex/custom/ee.sty
