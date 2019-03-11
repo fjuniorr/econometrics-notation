@@ -25,7 +25,7 @@ sudo texhash
 sudo mktexlsr
 ```
 
-# Installations instructions for windows
+# Installations instructions for windows in newer version of Miktex
 
 ## First install
 
@@ -48,3 +48,7 @@ cp /d/projects/econometrics-notation/ee.sty ~/texmf/tex/latex/custom/ee.sty
 ```
 
 Now go to the "Tasks" menu and click on "Refresh file name data base"
+
+# Installations instructions for windows in older version of Miktex
+
+See [this](https://tex.stackexchange.com/a/20121)
